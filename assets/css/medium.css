@@ -840,6 +840,7 @@ iframe {
 }
 
 .card .img-fluid {
+    height: 190px;
     width: 100%;
 }
 

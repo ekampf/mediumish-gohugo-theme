@@ -10,11 +10,17 @@ License: https://www.wowthemes.net/freebies-license/
 a {
     color: #00ab6b;
     transition: all 0.2s;
+    text-decoration: none;
 }
 
 a:hover {
     color: #038252;
     text-decoration: none;
+}
+
+.card-title a { color: #111111}
+#comments a, .card-title a:hover {
+    color: #1C9963;
 }
 
 pre {

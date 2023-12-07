@@ -789,6 +789,46 @@ img {
     border-top: 1px solid #ddd;
 }
 
+.bottompagination .pagination {
+    display: block;
+    font-size: 0.93rem;
+    padding: 15px 0;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 20px;
+    color: #292929;
+    border-top: 1px solid #ddd;
+    border-radius: 0;
+}
+
+.bottompagination .pagination a, .bottompagination .pagination span {
+    display: inline-block;
+    list-style: none;
+    margin: 0 2px;
+    padding: 0 20px;
+    border-radius: 2px;
+    font-size: 14px;
+    position: relative;
+    color: #999;
+}
+
+.bottompagination .pagination span, .bottompagination .pagination a {
+    color: #999;
+}
+.bottompagination .pagination span.active {
+    color: #111;
+    font-weight: 700;
+}
+.bottompagination .pagination span.active::after {
+	content: "";
+	background-color: #111;
+	height: 1px;
+	position: absolute;
+	top: -17px;
+	left: 0;
+	right: 0;
+}
+
 .pointerup {
     margin-bottom: -17px;
     margin-left: 49%;
@@ -810,9 +850,6 @@ span.navigation {
     text-align: center;
 }
 
-.pagination {
-    display: block;
-}
 
 iframe {
     max-width: 100%;

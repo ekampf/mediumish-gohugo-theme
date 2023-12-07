@@ -12,7 +12,7 @@
           <span>&laquo; Prev</span>
         {{ end }}
 
-        <span class="ml-1 mr-1">{{ .PageNumber }}</span>
+        <span class="ml-1 mr-1 active">{{ .PageNumber }}</span>
 
         {{ if .HasNext }}
           <a class="ml-1 mr-1" href="{{.Next.URL}}">{{ .Next.PageNumber }}</a>

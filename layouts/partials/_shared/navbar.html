@@ -16,7 +16,7 @@
                 <a target="_blank" href="https://instagram.com/{{.}}"> <i class="fab fa-instagram social"></i></a>
                 {{ end }}
             </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 text-center text-sm- logoarea">
+            <div class="col-lg-4 col-md-4 col-xs-12 text-start text-sm-center logoarea">
                 <a class="navbar-brand" href="{{ .Site.BaseURL }}/">
                     {{ with .Site.Params.logo }}
                     <img src="{{ . | urlize | relURL }}" alt="logo">

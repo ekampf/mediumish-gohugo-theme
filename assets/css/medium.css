@@ -853,3 +853,15 @@ iframe {
 .sticky-top-80 {
     top: 80px;
 }
+
+.shareitnow li a {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d2d2d2;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50%;
+    color: #a9a9a9;
+    font-size: 13px;
+}

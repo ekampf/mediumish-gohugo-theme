@@ -862,6 +862,10 @@ iframe {
     font-size: 0.8rem;
     display: inline-block;
 }
+.jumbotron.fortags a:hover {
+    padding: 10px 15px 12px;
+    font-size: 1rem;
+}
 
 .layout-page .jumbotron.fortags {
     display: none;

@@ -1,0 +1,15 @@
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
+<div id="search"></div>
+<script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const searchString = urlParams.get("q");
+
+        let pagefind = new PagefindUI({ element: "#search", showSubResults: true });
+        if (searchString) { 
+            pagefind.triggerSearch(searchString);
+        }
+    });
+</script>

@@ -8,6 +8,10 @@ License: https://www.wowthemes.net/freebies-license/
 }
 
 a {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all 10.2s ease-in;
     color: #00ab6b;
     transition: all 0.2s;
     text-decoration: none;
@@ -40,20 +44,14 @@ pre {
     margin-bottom: -rem;
 }
 
-.mediumnavigation {
-    background: rgba(255, 255, 255, .97);
-    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
-    transition: top 0.2s ease-in-out;
-}
-
 .main-content {
     min-height: 300px;
 }
 
 .site-content {
-    min-height: 60vh;
+    min-height: 75vh;
     padding-top: 1.5rem;
-    margin-top: 57px;
+    margin-top: 115px;
     transition: all 0.4s;
 }
 
@@ -254,6 +252,37 @@ span.post-read-more a:hover {
     margin-right: 3px;
 }
 
+.mediumnavigation {
+    padding: 10px;
+    background: rgba(255, 255, 255, .97);
+    box-shadow: 0 2px 2px -2px rgba(0, 0, 0, .15);
+    transition: top 0.2s ease-in-out;
+}
+
+.mediumnavigation .brandrow i.social {
+    -moz-transition: all .2s ease-in;
+    -o-transition: all .2s ease-in;
+    -webkit-transition: all .2s ease-in;
+    transition: all .2s ease-in;
+    color: #888;
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 0 10px;
+    font-size: 15px;
+}
+.mediumnavigation .brandrow i.social:hover {
+    color: #1C9963;
+    font-size: 16px;
+}
+
+@media (max-width: 992px){
+    .navbar-toggler {
+        position: absolute;
+        top: -35px;
+        right: 0;
+    }
+}
+
 .mediumnavigation .form-control {
     font-size: 0.8rem;
     border-radius: 30px;
@@ -291,6 +320,7 @@ span.post-read-more a:hover {
 .mediumnavigation .nav-item,
 .dropdown-menu {
     font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
 .mediumnavigation .search-icon {
@@ -303,6 +333,31 @@ span.post-read-more a:hover {
 .mediumnavigation .navbar-brand img {
     max-height: 30px;
     margin-right: 5px;
+}
+
+.mediumnavigation .search-form .search-field {
+    color: #b2b2b2;
+    border-color: #eeeeee;
+    padding: 7px;
+    font-size: 13px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    background: transparent;
+    width: 180px;
+    border-width: 1px;
+    border-style: solid;
+    outline-offset: 0;
+}
+.mediumnavigation .search-form .search-submit {
+    background-color: #1C9963;
+    border-color: #1C9963;
+    color: #fff;
+    font-size: 13px;
+    padding: 8px 15px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    margin-left: -5px;
+    border: 0;
 }
 
 .mainheading h1.sitetitle {

@@ -116,9 +116,14 @@ section.recent-posts {
     height: 100%;
 }
 
+.card {
+    overflow: hidden;
+}
+
 .maxthumb {
     max-height: 300px;
     overflow: hidden;
+    line-height: 0;
 }
 
 .listfeaturedtag .card,
@@ -245,6 +250,15 @@ span.post-name a,
 span.post-read-more a:hover {
     color: rgba(0, 0, 0, .8);
 }
+
+span.post-read-more svg path {
+    transition: all .2s ease-in-out;
+}
+
+span.post-read-more:hover svg path {
+    stroke: var(--bs-yellow);
+}
+
 
 .dot:after {
     content: "·";

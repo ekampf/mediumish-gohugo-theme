@@ -60,8 +60,8 @@ pre {
 .site-content {
     min-height: 75vh;
     padding-top: 1.5rem;
-    margin-top: 115px;
-    transition: all 0.4s;
+    margin-top: 75px;
+    transition: all .4s;
 }
 
 section {

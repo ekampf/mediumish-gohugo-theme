@@ -29,4 +29,73 @@
 	{{ $style := resources.Get . }}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" media="screen">
 	{{- end }}
+
+	<!-- ld+json -->
+	{{ if .IsPage }}
+	{{ if eq .Type "blog" }}
+	{{ $titleMeta := printf "%s" .Title }}
+	{{ $description := printf "%s" .Summary }}
+	{{ if .Description }}
+	{{ $description = printf "%s" .Description }}
+	{{ end }}
+	<script type="application/ld+json">
+	{
+		"@context"	:	"http://schema.org",
+		"@type"		:	"BlogPosting",
+		"@id"		:	"{{ .Permalink }}",
+		"mainEntityOfPage"	:	{
+			"@type"	: 	"WebPage",
+			"@id"	:	"{{ .Permalink }}"
+		},
+		"name"		: 	{{ $titleMeta }},
+		{{ if .Params.comments }}
+		"discussionUrl" : "{{ .Permalink }}#comments",
+		{{ end }}
+		"headline"	:	{{ $titleMeta }},
+		"description"	: {{ $description }},
+		"abstract"	:	{{ $description }},
+		"inLanguage"	: "en-US",
+		"isFamilyFriendly"	: 	"true",
+		"author"		: {
+			"@type"	: "Person",
+			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
+			"url"	: "{{"/about" | absURL}}"
+		},
+		"creator"		: {
+			"@type"	: "Person",
+			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
+			"url"	: "{{"/about" | absURL}}"
+		},
+		"accountablePerson"	: {
+			"@type"	: "Person",
+			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
+			"url"	: "{{"/about" | absURL}}"
+		},
+		"copyrightHolder"	: {
+			"@type"	: "Person",
+			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
+			"url"	: "{{"/about" | absURL}}"
+		},
+		"copyrightYear"	: "{{ dateFormat "2006" (default .Date (.PublishDate)) }}",
+		"datePublished"	: "{{ dateFormat "2006-01-02" (default .Date (.PublishDate)) }}",
+		"dateCreated"	: "{{ dateFormat "2006-01-02" (default .Date (.PublishDate)) }}",
+		"dateModified"  : "{{ dateFormat "2006-01-02" (default .Date (.Params.lastmod)) }}",
+		"publisher"	:	{
+			"@type" : "Organization",
+			"name":	"{{ .Site.Title }}",
+			"url": "{{"/" | absURL}}",
+			"logo": {
+				"@type"	:	"ImageObject",
+				"contentUrl"	:	"{{ .Site.Params.logo | absURL }}",
+				"url"	:	"{{ .Site.Params.logo | absURL }}"
+			}
+		},
+		"url"	:	"{{ .Permalink }}",
+		"wordCount"	:	"{{ .WordCount }}",
+		"image"	:	"{{ .Params.image | absURL }}",
+		"keywords"	:	"{{ range $i, $e := .Params.tags }}{{ if $i }},{{ end }}{{ $e }}{{ end}}"
+	}
+	</script>
+	{{ end }}
+	{{ end }}
 </head>

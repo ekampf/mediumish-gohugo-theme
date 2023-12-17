@@ -283,6 +283,22 @@ span.post-read-more:hover svg path {
     color: #1C9963;
     font-size: 16px;
 }
+.mediumnavigation .brandrow i.fa-linkedin:hover {
+    color: #0077b5;
+    font-size: 16px;
+}
+.mediumnavigation .brandrow i.fa-github:hover {
+    color: black;
+    font-size: 16px;
+}
+.mediumnavigation .brandrow i.fa-instagram:hover {
+    color: #FD1D1D;
+    font-size: 16px;
+}
+.mediumnavigation .brandrow i.fa-buymeacoffee:hover {
+    color: rgb(255, 221, 0);
+    font-size: 16px;
+}
 
 @media (max-width: 992px){
     .navbar-toggler {
@@ -601,6 +617,10 @@ ul.tags li a:hover {
     border-radius: 999em;
     font-size: 0.85rem;
     display: inline-block;
+}
+.btn.follow:hover {
+    border-color: #1DA1F2;
+    color: #1DA1F2;
 }
 
 .btn.subscribe {

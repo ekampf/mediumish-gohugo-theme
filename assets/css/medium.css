@@ -3,6 +3,15 @@ Template Name: Mediumish
 Copyright: Sal, WowThemes.net, https://www.wowthemes.net 
 License: https://www.wowthemes.net/freebies-license/ 
 */
+:root {
+    --social-twitter: #0077b5;
+    --social-facebook: #3b5998;
+    --social-instagram: #FD1D1D;
+    --social-github: #000;
+    --social-linkedin: #0077b5;
+    --social-buymeacoffee: #FFDD00;
+}
+
 .mainheading {
     padding: 1rem 0rem;
 }
@@ -11,7 +20,7 @@ a {
     -moz-transition: all .2s ease-in;
     -o-transition: all .2s ease-in;
     -webkit-transition: all .2s ease-in;
-    transition: all 10.2s ease-in;
+    transition: all .2s ease-in;
     color: #00ab6b;
     transition: all 0.2s;
     text-decoration: none;
@@ -279,24 +288,25 @@ span.post-read-more:hover svg path {
     margin: 0 0 0 10px;
     font-size: 15px;
 }
+
 .mediumnavigation .brandrow i.social:hover {
     color: #1C9963;
     font-size: 16px;
 }
 .mediumnavigation .brandrow i.fa-linkedin:hover {
-    color: #0077b5;
+    color: var(--social-linkedin);
     font-size: 16px;
 }
 .mediumnavigation .brandrow i.fa-github:hover {
-    color: black;
+    color: var(--social-github);
     font-size: 16px;
 }
 .mediumnavigation .brandrow i.fa-instagram:hover {
-    color: #FD1D1D;
+    color: var(--social-instagram);
     font-size: 16px;
 }
 .mediumnavigation .brandrow i.fa-buymeacoffee:hover {
-    color: rgb(255, 221, 0);
+    color: var(--social-buymeacoffee);
     font-size: 16px;
 }
 
@@ -464,6 +474,19 @@ blockquote {
     line-height: 30px;
     text-align: center;
     border-radius: 50%;
+    transition: all .2s ease-in;
+}
+.share ul li i.fa-twitter:hover {
+    color: var(--social-twitter);
+    border: 1px solid var(--social-twitter);
+}
+.share ul li i.fa-facebook-f:hover {
+    color: var(--social-facebook);
+    border: 1px solid var(--social-facebook);
+}
+.share ul li i.fa-linkedin:hover {
+    color: var(--social-linkedin);
+    border: 1px solid var(--social-linkedin);
 }
 
 .svgIcon {
@@ -981,16 +1004,4 @@ iframe {
 
 .sticky-top-80 {
     top: 80px;
-}
-
-.shareitnow li a {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #d2d2d2;
-    line-height: 30px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 50%;
-    color: #a9a9a9;
-    font-size: 13px;
 }

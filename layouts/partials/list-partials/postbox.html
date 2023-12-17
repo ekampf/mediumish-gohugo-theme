@@ -1,15 +1,13 @@
 <!-- begin post -->
 <div class="col-lg-4 col-md-6 mb-30px card-group">
     <div class="card h-100">
-        <div class="maxthumb">
-            <a href="{{ .Permalink }}">
-                {{$images := .Resources.ByType "image"}}
-                {{with $images.GetMatch "*cover*" }}
-                    {{$coverThumb := .Resize "x190" }}
-                    <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image">
-                {{end}}                
-            </a>
-        </div>
+        <a href="{{ .Permalink }}">
+            {{$images := .Resources.ByType "image"}}
+            {{with $images.GetMatch "*cover*" }}
+                {{$coverThumb := .Resize "x190" }}
+                <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image">
+            {{end}}                
+        </a>
         <div class="card-body">
             <h2 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
             <h4 class="card-text">{{ .Summary }}</h4>            

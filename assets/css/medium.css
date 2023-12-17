@@ -120,12 +120,6 @@ section.recent-posts {
     overflow: hidden;
 }
 
-.maxthumb {
-    max-height: 300px;
-    overflow: hidden;
-    line-height: 0;
-}
-
 .listfeaturedtag .card,
 .card-footer {
     border: 0;

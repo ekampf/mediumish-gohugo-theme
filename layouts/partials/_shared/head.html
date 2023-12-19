@@ -14,7 +14,7 @@
 	{{ if .Params.canonicalUrl }}
 	<link rel="canonical" href="{{ .Params.canonicalUrl }}">
 	{{ else }}
-	<link rel="canonical" href="{{ .RelPermalink }}">
+	<link rel="canonical" href="{{ .Permalink }}">
 	{{ end }}
 
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">

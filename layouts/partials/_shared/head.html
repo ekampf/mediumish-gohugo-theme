@@ -11,6 +11,12 @@
 	{{ with .OutputFormats.Get "rss" -}}{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}{{ end }}
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 
+	{{ if .Params.canonicalUrl }}
+	<link rel="canonical" href="{{ .Params.canonicalUrl }}">
+	{{ else }}
+	<link rel="canonical" href="{{ .RelPermalink }}">
+	{{ end }}
+
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 	<link rel="preconnect" href="//www.google-analytics.com">
 	{{ if .IsPage }}

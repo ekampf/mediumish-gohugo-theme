@@ -6,8 +6,8 @@
 	<link rel="icon" href="{{ . | urlize | relURL }}">
 	{{ end }}
 	<title>{{ .Page.Title }} | {{ .Site.Title }}</title>
-	{{ with .Site.Params.meta.description }}<meta name="description" content="{{ . }}">{{ end }}
-	{{ with .Site.Params.meta.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+	<meta name="description" content="{{.Description | default .Site.Params.description}}">
+	<meta name="keywords" content="{{ .Keywords | default .Site.Params.keywords }}">
 	{{ with .OutputFormats.Get "rss" -}}{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}{{ end }}
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 

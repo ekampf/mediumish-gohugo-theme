@@ -1002,6 +1002,11 @@ iframe {
     width: 100%;
 }
 
+.card.side .img-fluid {
+    height: 100%;
+    width: 100%;
+}
+
 .sticky-top-80 {
     top: 80px;
 }

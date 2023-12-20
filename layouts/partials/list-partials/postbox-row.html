@@ -1,0 +1,21 @@
+<!-- begin post -->
+<div class="mb-30px card-group">
+    <div class="card side">
+        <div class="row">
+            <div class="col-sm-8">
+                <a href="{{ .Permalink }}">
+                    {{$images := .Resources.ByType "image"}}
+                    {{with $images.GetMatch "*cover*" }}
+                        {{$coverThumb := .Resize "x290" }}
+                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image">
+                    {{end}}
+                </a>
+            </div>
+            <div class="col-sm-4">
+                {{- partial "list-partials/_card_body.html" . -}}
+                {{- partial "list-partials/_card_footer.html" . -}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end post -->

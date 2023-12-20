@@ -19,6 +19,8 @@
 
 	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
 	<link rel="preconnect" href="//www.google-analytics.com">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	{{ if .IsPage }}
 	<link rel="dns-prefetch" href="//developerzen.disqus.com">
 	{{ end }}
@@ -110,4 +112,5 @@
 	</script>
 	{{ end }}
 	{{ end }}
+	{{ partial "_shared/head-extra.html" . }}
 </head>

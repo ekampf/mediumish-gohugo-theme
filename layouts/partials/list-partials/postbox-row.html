@@ -7,7 +7,7 @@
                     {{$images := .Resources.ByType "image"}}
                     {{with $images.GetMatch "*cover*" }}
                         {{$coverThumb := .Resize "x290" }}
-                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image">
+                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image" loading="lazy">
                     {{end}}
                 </a>
             </div>

@@ -3,7 +3,7 @@
         {{if isset .Site.Params "author"}}
         {{if isset .Site.Params "author_thumb"}}
             <span class="meta-footer-thumb">
-            <img class="author-thumb" src="{{ .Site.Params.author_thumb | urlize | relURL  }}" alt="{{ .Site.Params.author }}">
+            <img class="author-thumb" src="{{ .Site.Params.author_thumb | urlize | relURL  }}" alt="{{ .Site.Params.author }}" loading="lazy">
             </span>                
             <span class="author-meta">
             <span class="post-name">{{ .Site.Params.author }}</a></span><br/>

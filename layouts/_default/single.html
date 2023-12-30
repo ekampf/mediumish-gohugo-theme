@@ -21,7 +21,7 @@
                         {{if isset .Site.Params.author "thumbnail"}}
                         {{if isset .Site.Params.author "description"}}
                         {{$thumb := resources.Get .Site.Params.author.thumbnail}}
-                        {{$thumb := $thumb.Resize "72x72" }}
+                        {{$thumb := $thumb.Resize "108x108" }}
                         <div class="row post-top-meta">
                             <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
                                 <img class="author-thumb" src="{{ $thumb.RelPermalink }}" alt="{{ .Site.Params.author.name }}">

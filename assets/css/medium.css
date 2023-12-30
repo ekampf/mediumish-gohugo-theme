@@ -155,8 +155,8 @@ section.recent-posts {
     line-height: 1.25;
 }
 
-.listfeaturedtag h4.card-text,
-.listrecent h4.card-text,
+.listfeaturedtag h3.card-text,
+.listrecent h3.card-text,
 .listrecent div.card-text {
     color: rgba(0, 0, 0, .44);
     font-size: 0.95rem;

@@ -1,5 +1,8 @@
 # Mediumish Theme
 
+Originally forked from [lgaida's mediumish theme](https://github.com/lgaida/mediumish-gohugo-theme) this
+is a customized and improved theme used by [developerzen.com](https://developerzen.com).
+
 This theme for gohugo is a customized port based on the [Mediumish Jekyll-Theme](//github.com/wowthemesnet/mediumish-theme-jekyll) by [WowThemesNet](//github.com/wowthemesnet). The original theme ships with a few more features than this ported version but i also added features which the original version did not include.
 
 ![screenshot](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/screenshot.png)

@@ -2,9 +2,7 @@
 
 This theme for gohugo is a customized port based on the [Mediumish Jekyll-Theme](//github.com/wowthemesnet/mediumish-theme-jekyll) by [WowThemesNet](//github.com/wowthemesnet). The original theme ships with a few more features than this ported version but i also added features which the original version did not include.
 
-See the [Demo](https://lgaida.github.io/mediumish-gohugo-theme-demo) and [Demo-Source](https://github.com/lgaida/mediumish-gohugo-theme-demo)
-
-![screenshot](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/screenshot.png)
+![screenshot](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/screenshot.png)
 
 ## Features
 + Landingpage
@@ -24,7 +22,7 @@ See the [Demo](https://lgaida.github.io/mediumish-gohugo-theme-demo) and [Demo-S
 Inside the folder of your Hugo site run:
 
     $ cd themes
-    $ git clone https://github.com/lgaida/mediumish-gohugo-theme
+    $ git clone https://github.com/ekampf/mediumish-gohugo-theme
 
 ## Preface
 I recommend placing image files for your site config within the `static` folder of your gohugo website. This allows them to be easily referenced from the config.toml or post.md files. You may structure the files and folders within `static` however you'd like, with one exception: There must be a file named `jumbotron.jpg` present under the path `static/images` as it is referenced in the .css.
@@ -101,7 +99,7 @@ googleAnalytics = "UA-1XXXXXXX1-X"
 `mailchimp` and `mailprotect`: provide links to a mailchimp-list and a mailchimp-protector id, the following screenshot should clarify. if not specified the alertbar for mail-subscription doesn't show up.
 `customCSS`: you can add paths to your own css files here to tweak and customize the css
 
-![mailchimp-example](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/mailchimp.png)
+![mailchimp-example](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/mailchimp.png)
 
 ### Author Params
 ```toml
@@ -110,7 +108,7 @@ googleAnalytics = "UA-1XXXXXXX1-X"
   thumbnail = "/images/author.jpg"
   description = "Creator of this blog."
 ```
-![author-params](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/authorpost.png)
+![author-params](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/authorpost.png)
 
 ### Landingpage Params
 ```toml
@@ -133,13 +131,13 @@ You can currently provide your username from `github`, `linkedin`, `xing`, `twit
   twitter = "<username>"
   instagram = "<username>"
 ```
-![landingpage-params](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/landing.png)
+![landingpage-params](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/landing.png)
 
 ## Contributing
 
-Feel free to use the [issue tracker](//github.com/lgaida/mediumish-gohugo-theme/issues) if you want to contribute in any possible way.
-You can also create a [pull request](//github.com/lgaida/mediumish-gohugo-theme/pulls) if you have already implemented a new feature that you want to share.
+Feel free to use the [issue tracker](//github.com/ekampf/mediumish-gohugo-theme/issues) if you want to contribute in any possible way.
+You can also create a [pull request](//github.com/ekampf/mediumish-gohugo-theme/pulls) if you have already implemented a new feature that you want to share.
 
 ## License
 
-Like the original jekyll-theme this ported theme is released under the MIT License. Read more at the [License](//github.com/lgaida/mediumish-gohugo-theme/blob/master/LICENSE) itself.
+Like the original jekyll-theme this ported theme is released under the MIT License. Read more at the [License](//github.com/ekampf/mediumish-gohugo-theme/blob/master/LICENSE) itself.

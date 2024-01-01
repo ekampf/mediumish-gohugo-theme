@@ -8,41 +8,47 @@ This theme for gohugo is a customized port based on the [Mediumish Jekyll-Theme]
 ![screenshot](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/screenshot.png)
 
 ## Features
+
 + Landingpage
 + 404-Page
 + Posts
-    + tags can be used
-    + shareable via socialmedia
+  + tags can be used
+  + shareable via socialmedia
 + Custom pagination
 + Prev/Next-Links
 + Tag-Overview in Jumbotron
 + Integrations:
-    + Disqus Comments
-    + Google Analytics
-    + Mailchimp
+  + Disqus Comments
+  + Google Analytics
+  + Mailchimp
 
 ## Installation
+
 Inside the folder of your Hugo site run:
 
-    $ cd themes
-    $ git clone https://github.com/ekampf/mediumish-gohugo-theme
+```shell
+cd themes
+git clone https://github.com/ekampf/mediumish-gohugo-theme
+```
 
 ## Preface
+
 I recommend placing image files for your site config within the `static` folder of your gohugo website. This allows them to be easily referenced from the config.toml or post.md files. You may structure the files and folders within `static` however you'd like, with one exception: There must be a file named `jumbotron.jpg` present under the path `static/images` as it is referenced in the .css.
 
-
 ## Post Example
+
 To create a simple post use the hugo new command as usual.
-This theme makes use of page bundles / page resource (see https://gohugo.io/content-management/page-bundles/).
+This theme makes use of page bundles / page resource (see <https://gohugo.io/content-management/page-bundles/>).
 Place any image next to your post's index.md file and make sure it contains the keyword "cover" inside its name.
 This image will also be used for twitter and opengraph cards.
 
-```
+```shell
 hugo new blog/my-first-post/index.md
 ```
 
 Creating a new post will create something like this:
-```
+
+```markdown
 ---
 title: "My first post"
 date: 2018-10-01T15:25:19+02:00
@@ -61,17 +67,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper libero qu
 `tags`: are used as usual, just add the tags you want to use. They are displayed in the jumbotron on the list-view, and on the bottom of each single-view\
 `comments`: true/false to turn on/off disqus-comments
 
-
 ## Static Content
+
 I added a customized layout for content of type "static", which means that posts in the folder "static" are displayed as standalone pages. I also disabled the list-layout for this folder.
 
 For example: to create an imprint, simply go with the following command and add your markdown-text.
-```
+
+```shell
 hugo new static/imprint.md
 ```
 
 ## Configuration
+
 You should at least specify the following default params in your config.toml
+
 ```toml
 baseURL = "http://yourdomain.com"
 languageCode = "en-us"
@@ -82,6 +91,7 @@ copyright = "John Doe - All rights reserved"
 disqusShortname = "shortDisquis"
 googleAnalytics = "UA-1XXXXXXX1-X"
 ```
+
 `title`: is displayed on the postlist and on each post as the title\
 `summaryLength`: feel free to play around with this\
 `copyright`: is displayed in the footer next to the copyright-logo\
@@ -89,6 +99,7 @@ googleAnalytics = "UA-1XXXXXXX1-X"
 `googleAnalytics`: provide your googleAnalytics-Code
 
 ### General Params
+
 ```toml
 [params]
   logo = "/images/icon.png"
@@ -97,6 +108,7 @@ googleAnalytics = "UA-1XXXXXXX1-X"
   mailprotect = "you can provide a protector-name here, see below"
   customCSS = ["css/tweaks.css", "css/customHeader.css"]
 ```
+
 `logo`: is displayed in titlebar and alertbar\
 `description`: is displayed under title\
 `mailchimp` and `mailprotect`: provide links to a mailchimp-list and a mailchimp-protector id, the following screenshot should clarify. if not specified the alertbar for mail-subscription doesn't show up.
@@ -105,15 +117,18 @@ googleAnalytics = "UA-1XXXXXXX1-X"
 ![mailchimp-example](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/mailchimp.png)
 
 ### Author Params
+
 ```toml
 [params.author]
   name = "John Doe"
   thumbnail = "/images/author.jpg"
   description = "Creator of this blog."
 ```
+
 ![author-params](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/authorpost.png)
 
 ### Landingpage Params
+
 ```toml
 [params.index]
   picture = "/images/author.jpg"
@@ -124,7 +139,9 @@ googleAnalytics = "UA-1XXXXXXX1-X"
 ### This is a markdown heading'''
   alertbar = true
 ```
+
 You can currently provide your username from `github`, `linkedin`, `xing`, `twitter`, `medium`. They will be displayed as icons on the landingpage.
+
 ```toml
 [params.social]
   github = "<username>"
@@ -134,6 +151,7 @@ You can currently provide your username from `github`, `linkedin`, `xing`, `twit
   twitter = "<username>"
   instagram = "<username>"
 ```
+
 ![landingpage-params](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/landing.png)
 
 ## Contributing

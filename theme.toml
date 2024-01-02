@@ -1,15 +1,15 @@
 name = "mediumish"
 license = "MIT"
-licenselink = "https://github.com/lgaida/mediumish-theme-gohugo/blob/master/LICENSE"
+licenselink = "https://github.com/ekampf/mediumish-theme-gohugo/blob/master/LICENSE"
 description = "An elegant, mediumish theme for gohugo"
-homepage = "http://lgaida.de"
+homepage = "https://developerzen.com"
 tags = ["Blog", "Responsive", "Personal", "Minimal", "Clean", "Disqus", "Google Analytics"]
 features = []
-min_version = "0.41"
+min_version = "0.121.1"
 
 [author]
-  name = "lgaida"
-  homepage = "http://lgaida.de"
+  name = "Eran Kampf"
+  homepage = "https://developerzen.com"
 
 # If porting an existing theme
 [original]

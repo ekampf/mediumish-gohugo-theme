@@ -408,6 +408,13 @@ span.post-read-more:hover svg path {
     margin-bottom: 1rem;
 }
 
+.mainheading h2.postsubtitle {
+    font-size:22px;
+    font-style: normal;
+    font-weight: 400;
+    color: #6B6B6B;
+}
+
 .footer {
     border-top: 1px solid rgba(0, 0, 0, .05) !important;
     padding-top: 15px;

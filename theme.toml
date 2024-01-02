@@ -5,7 +5,7 @@ description = "An elegant, mediumish theme for gohugo"
 homepage = "https://developerzen.com"
 tags = ["Blog", "Responsive", "Personal", "Minimal", "Clean", "Disqus", "Google Analytics"]
 features = []
-min_version = "0.121.1"
+min_version = "0.120"
 
 [author]
   name = "Eran Kampf"

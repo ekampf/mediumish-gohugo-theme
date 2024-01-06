@@ -48,7 +48,8 @@
                     <!-- Post Featured Image -->
                     {{$images := .Resources.ByType "image"}}
                     {{with $images.GetMatch "*cover*" }}
-                        <img class="featured-image img-fluid" src="{{ .Permalink }}" alt="thumbnail for this post">
+                        {{ $cover := .Resize "800x webp" }}
+                        <img class="featured-image img-fluid" src="{{ $cover.Permalink }}" alt="thumbnail for this post">
                     {{end}}
                     <!-- End Featured Image -->
 

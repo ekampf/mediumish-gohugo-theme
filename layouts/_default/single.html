@@ -31,7 +31,7 @@
                                 <span class="author-description">
                                     {{ .Site.Params.author.description }}
                                     <i class="fa fa-star"></i>
-                                    Published {{ dateFormat "Jan 2, 2006" .PublishDate }}
+                                    <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0700" }}">Published {{ dateFormat "Jan 2, 2006" .PublishDate }}</time>
                                     <i class="fa fa-clock-o clock"></i>
                                     {{ .ReadingTime }} min read
                                 </span>					

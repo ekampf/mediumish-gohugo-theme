@@ -6,7 +6,6 @@ tags: ["software development", "python"]
 
 date: {{ .Date }}
 publishdate: {{ .Date }}
-lastmod: {{ .Date }}
 
 draft: true
 comments: true

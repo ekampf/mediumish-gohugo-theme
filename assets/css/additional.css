@@ -17,9 +17,16 @@
     color: rgba(0,0,0,.44);
     font-size:1.5rem;
 }
-.clock{
+.clock {
     margin-left: 25px;
 }
+.draft {
+    margin-left: 25px;
+    opacity: 1;
+    color: red !important;
+    font-weight: bold;
+}
+
 .jumbotron.fortags a {
     background: #1C9963 !important;
 }

@@ -112,5 +112,10 @@
 	</script>
 	{{ end }}
 	{{ end }}
+
+	{{ if isset .Site.Params "goatcounter" }}
+	<script data-goatcounter="https://{{.Site.Params.goatcounter}}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+	{{ end }}
+
 	{{ partial "_shared/head-extra.html" . }}
 </head>

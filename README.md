@@ -106,12 +106,14 @@ googleAnalytics = "UA-1XXXXXXX1-X"
   mailchimp = "you can provide a mailchimp-link here, see below"
   mailprotect = "you can provide a protector-name here, see below"
   customCSS = ["css/tweaks.css", "css/customHeader.css"]
+  goatcounter = "your-goatcounter-code"
 ```
 
 `logo`: is displayed in titlebar and alertbar\
 `description`: is displayed under title\
 `mailchimp` and `mailprotect`: provide links to a mailchimp-list and a mailchimp-protector id, the following screenshot should clarify. if not specified the alertbar for mail-subscription doesn't show up.
-`customCSS`: you can add paths to your own css files here to tweak and customize the css
+`customCSS`: you can add paths to your own css files here to tweak and customize the css.
+`goatcounter`: your goatcounter code.
 
 ![mailchimp-example](https://raw.githubusercontent.com/ekampf/mediumish-gohugo-theme/master/images/mailchimp.png)
 

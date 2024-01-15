@@ -29,7 +29,7 @@
                     <div class="listrecent">
                         {{ $recent := where .Site.Pages "Type" "blog" }}
                         {{ $recentPages := where $recent "IsPage" true }}
-                        {{ range first 1 $recentPages.ByDate.Reverse }}
+                        {{ range first 1 $recentPages.ByPublishDate.Reverse }}
                             {{- partial "list-partials/postbox-row.html" . -}}
                         {{ end }}
                     </div>
@@ -39,7 +39,7 @@
                         <div class="row h-100">
                         {{ $recent := where .Site.Pages "Type" "blog" }}
                         {{ $recentPages := where $recent "IsPage" true }}
-                        {{ $recentPages := after 1 $recentPages.ByDate.Reverse}}
+                        {{ $recentPages := after 1 $recentPages.ByPublishDate.Reverse}}
                         {{ range first 6 $recentPages }}
                             {{- partial "list-partials/postbox.html" . -}}
                         {{ end }}

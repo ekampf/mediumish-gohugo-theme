@@ -6,8 +6,12 @@ summaryLength = 25
 copyright = "John Doe - All rights reserved"
 enableEmoji = true
 publishDir = "docs"
-#disqusShortname = "your-shortname-here"
-#googleAnalytics = "UA-1XXXXXXX1-1"
+
+# [services]
+#     [services.googleAnalytics]
+#         id = "UA-1XXXXXXX1-1"
+#     [services.disqus]
+#         shortname = "your shortname"
 
 [params]
   logo = "/images/logo.png"

@@ -1,5 +1,6 @@
 <!-- Begin Comments
 ================================================== -->
+{{ if .Site.Config.Services.Disqus.Shortname }}
 <div class="container">
     <div id="comments" class="row justify-content-center mb-5">
         <div class="col-md-8">              
@@ -7,5 +8,22 @@
         </div>
     </div>
 </div>
+{{ end }}
+{{ if .Site.Params.Utterances.Repo }}
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">              
+            <script src="https://utteranc.es/client.js"
+                    repo="ekampf/developerzen.com-comments"
+                    issue-term="pathname"
+                    label="utterances"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </div>
+    </div>
+</div>
+{{ end }}
 <!--End Comments
 ================================================== -->

@@ -22,7 +22,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	{{ if .IsPage }}
-	<link rel="dns-prefetch" href="//developerzen.disqus.com">
+		{{ if .Site.Config.Services.Disqus.Shortname }}
+		<link rel="dns-prefetch" href="//developerzen.disqus.com">
+		{{ end }}
+		{{ if .Site.Params.Utterances.Repo }}
+		<link rel="dns-prefetch" href="//utteranc.es">
+		{{ end }}
 	{{ end }}
 	
 	{{ template "_internal/twitter_cards.html" . }}

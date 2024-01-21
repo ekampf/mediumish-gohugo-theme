@@ -87,17 +87,6 @@ section.recent-posts {
     margin-bottom: -1px;
 }
 
-.article-post ol,
-.article-post ul {
-    margin-bottom: 1.5rem;
-}
-
-.article-post ol ol,
-.article-post ul ul {
-    list-style: disc;
-    margin-bottom: 0rem;
-}
-
 @media (min-width:576px) {
     .card-columns.listfeaturedtag {
         -webkit-column-count: 2;
@@ -431,23 +420,11 @@ span.post-read-more:hover svg path {
     color: rgba(0, 0, 0, .8);
 }
 
-.article-post {
-    font-family: Merriweather, Georgia, Cambria, "Times New Roman", Times, serif;
-    font-size: 1.1rem;
-    line-height: 1.84;
-    color: rgba(0, 0, 0, .8);
-}
-
 blockquote {
     border-left: 4px solid #00ab6b;
     padding: 0 20px;
     font-style: italic;
     color: rgba(0, 0, 0, .5);
-}
-
-.article-post p,
-.article-post blockquote {
-    margin: 0 0 1.5rem 0;
 }
 
 .featured-image {
@@ -807,6 +784,17 @@ h6 {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+.article-post {
+    font-family: Merriweather, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 1.1rem;
+    line-height: 1.84;
+    color: rgba(0, 0, 0, .8);
+}
+.article-post p,
+.article-post blockquote {
+    margin: 0 0 1.5rem 0;
+}
+
 .article-post .h1,
 .article-post .h2,
 .article-post .h3,
@@ -830,13 +818,19 @@ h6 {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
 }
 
-.layout-page .article-post {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    font-size: 1rem;
+.article-post ol,
+.article-post ul {
+    margin-bottom: 1.5rem;
 }
 
-.layout-page .article-post p {
-    margin-bottom: 1rem;
+.article-post ol ol,
+.article-post ul ul {
+    list-style: disc;
+    margin-bottom: 0rem;
+}
+.article-post img {
+    display: block;
+    margin: 0 auto;
 }
 
 img {

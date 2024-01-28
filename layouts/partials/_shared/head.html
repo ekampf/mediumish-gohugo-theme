@@ -37,17 +37,19 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
+	<!-- css -->
 	{{ $medium := resources.Get "/css/medium.css" | resources.Fingerprint }}
 	{{ $additional := resources.Get "/css/additional.css" | resources.Fingerprint }}
-	{{ $css := slice $medium $additional | resources.Concat "css/style.css" | resources.Minify | resources.Fingerprint }}
+	{{ $css := slice $medium $additional }}
+	{{ if .Site.Params.customCSS }}
+		{{ range .Site.Params.customCSS -}}
+			{{ $style := resources.Get . }}
+			{{ $css = $css | append $style }}
+		{{- end }}
+	{{ end }}
+	{{ $css := $css | resources.Concat "css/style.css" | resources.Minify | resources.Fingerprint }}
 	<link rel="stylesheet" href="{{ $css.RelPermalink | absURL }}" integrity="{{ $css.Data.Integrity }}">
 
-
-	<!-- Custom css -->
-	{{ range .Site.Params.customCSS -}}
-	{{ $style := resources.Get . }}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}" crossorigin="anonymous" media="screen">
-	{{- end }}
 
 	<!-- ld+json -->
 	{{ if .IsPage }}

@@ -80,22 +80,22 @@
 		"author"		: {
 			"@type"	: "Person",
 			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-			"url"	: "{{"/about" | absURL}}"
+			"url"	: "{{"/about/" | absURL}}"
 		},
 		"creator"		: {
 			"@type"	: "Person",
 			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-			"url"	: "{{"/about" | absURL}}"
+			"url"	: "{{"/about/" | absURL}}"
 		},
 		"accountablePerson"	: {
 			"@type"	: "Person",
 			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-			"url"	: "{{"/about" | absURL}}"
+			"url"	: "{{"/about/" | absURL}}"
 		},
 		"copyrightHolder"	: {
 			"@type"	: "Person",
 			"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-			"url"	: "{{"/about" | absURL}}"
+			"url"	: "{{"/about/" | absURL}}"
 		},
 		"copyrightYear"	: "{{ dateFormat "2006" (default .Date (.PublishDate)) }}",
 		"datePublished"	: "{{ dateFormat "2006-01-02" (default .Date (.PublishDate)) }}",

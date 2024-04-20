@@ -1,0 +1,28 @@
+{{ define "header"}}
+    {{- partial "_shared/navbar.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+    {{- partial "_shared/title.html" . -}}
+
+    <ul class="terms-tags">
+        {{- $type := .Type }}
+        {{- range $key, $value := .Data.Terms.Alphabetical }}
+        {{- $name := .Name }}
+        {{- $count := .Count }}
+        {{- with site.GetPage (printf "/%s/%s" $type $name) }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Name }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+        </li>
+        {{- end }}
+        {{- end }}
+    </ul>
+    
+    {{- partial "_shared/alertbar.html" . -}}
+{{ end }}
+
+
+{{ define "footer"}}
+    {{- partial "_shared/jumbotron.html" . -}}
+    {{- partial "_shared/footer.html" . -}}
+{{ end }}

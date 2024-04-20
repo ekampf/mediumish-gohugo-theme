@@ -1017,3 +1017,27 @@ iframe {
 .sticky-top-80 {
     top: 80px;
 }
+
+/*****  Tags page *****/
+.terms-tags {
+    min-height: 500px;
+}
+
+.terms-tags li {
+    display: inline-block;
+    margin: 10px;
+    font-weight: 500;
+}
+
+.terms-tags a {
+    display: block;
+    padding: 3px 10px;
+    background: #E3EDF3;
+    border-radius: 6px;
+    transition: transform 0.1s;
+}
+
+.terms-tags a:active {
+    background: #E3EDF3;
+    transform: scale(0.96);
+}

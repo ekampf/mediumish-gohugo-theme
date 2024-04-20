@@ -9,7 +9,7 @@
         ================================================== -->
         <section class="recent-posts">            
             <div class="section-title">                
-                <h2><span>All Posts</span></h2>                
+                <h2><span>{{ .Page.LinkTitle }}</span></h2>                
             </div>            
             <div class="row listrecent">
                 {{ $post_paginator := .Paginate (.Pages.ByPublishDate.Reverse) 6 }}

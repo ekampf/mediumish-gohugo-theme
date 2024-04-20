@@ -9,4 +9,5 @@ publishdate: {{ .Date }}
 
 draft: true
 comments: true
+showCover: true
 ---

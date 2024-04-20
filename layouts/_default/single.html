@@ -50,10 +50,13 @@
 
                     <!-- Post Featured Image -->
                     {{$images := .Resources.ByType "image"}}
+                    {{$shouldShowCover := .Params.showCover | default true}}
+                    {{ if $shouldShowCover }}
                     {{with $images.GetMatch "*cover*" }}
                         {{ $cover := .Resize "800x webp" }}
                         <img class="featured-image img-fluid" src="{{ $cover.Permalink }}" alt="thumbnail for this post">
                     {{end}}
+                    {{ end }}
                     <!-- End Featured Image -->
 
                     <!-- Post Content -->

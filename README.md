@@ -107,6 +107,7 @@ googleAnalytics = "UA-1XXXXXXX1-X"
   mailprotect = "you can provide a protector-name here, see below"
   customCSS = ["css/tweaks.css", "css/customHeader.css"]
   goatcounter = "your-goatcounter-code"
+  searchQueryParam = "q" # query parameter or False if no search
 ```
 
 `logo`: is displayed in titlebar and alertbar\

@@ -947,9 +947,9 @@ iframe {
     background-size: cover;
 }
 
-.jumbotron.fortags a {
+.jumbotron.fortags a.tag {
     padding: 5px 10px 7px;
-    background: #222;
+    background: #1C9963;
     border-radius: 30px;
     color: #fff;
     font-weight: 500;
@@ -957,7 +957,7 @@ iframe {
     font-size: 0.8rem;
     display: inline-block;
 }
-.jumbotron.fortags a:hover {
+.jumbotron.fortags a.tag:hover {
     padding: 10px 15px 12px;
     font-size: 1rem;
 }

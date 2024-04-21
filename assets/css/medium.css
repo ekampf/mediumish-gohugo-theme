@@ -947,6 +947,10 @@ iframe {
     background-size: cover;
 }
 
+.jumbotron.fortags a {
+    color: #fff;
+}
+
 .jumbotron.fortags a.tag {
     padding: 5px 10px 7px;
     background: #1C9963;

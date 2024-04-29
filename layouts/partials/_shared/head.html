@@ -6,8 +6,11 @@
 	<link rel="icon" href="{{ . | urlize | relURL }}">
 	{{ end }}
 	<title>{{ .Page.Title }} | {{ .Site.Title }}</title>
-	<meta name="description" content="{{.Description | default .Site.Params.description}}">
+	<meta name="description" content="{{- with .Description }}{{ . }}{{- else }}{{- if or .IsPage .IsSection}}
+    {{- .Summary | default (printf "%s - %s" .Title  site.Title) }}{{- else if eq .Kind "term"}}{{printf "Posts taged with '%s' - %s" .Title  site.Title}}{{- else }}
+    {{- with site.Params.description }}{{ . }}{{- end }}{{- end }}{{- end -}}">
 	<meta name="keywords" content="{{ .Keywords | default .Site.Params.keywords }}">
+
 	{{ with .OutputFormats.Get "rss" -}}{{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}{{ end }}
 	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 

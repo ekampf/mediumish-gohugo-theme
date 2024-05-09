@@ -4,7 +4,7 @@
         <a href="{{ .Permalink }}">
             {{$images := .Resources.ByType "image"}}
             {{with $images.GetMatch "*cover*" }}
-                {{$coverThumb := .Resize "x290" }}
+                {{$coverThumb := .Resize "x290 webp" }}
                 <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image" loading="lazy" height="190">
             {{end}}                
         </a>

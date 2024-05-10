@@ -4,19 +4,19 @@
         <div class="row justify-content-center align-items-center brandrow">
             <div class="col-lg-4 col-md-4 col-xs-12 d-none d-lg-block d-xl-block d-xll-block">
                 {{ with .Site.Params.social.twitter }}
-                <a class="btn follow" href="https://twitter.com/{{.}}" target="blank"><i class="fa fa-twitter"></i> Follow</a>
+                <a class="btn follow" href="https://twitter.com/{{.}}" target="blank" aria-label="X (Twitter)"><i class="fa fa-twitter"></i> Follow</a>
                 {{ end }}
                 {{ with .Site.Params.social.linkedin }}
-                <a href="https://linkedin.com/in/{{.}}"><i class="fa fa-linkedin social" aria-hidden="true"></i></a>
+                <a href="https://linkedin.com/in/{{.}}" aria-label="LinkedIn"><i class="fa fa-linkedin social" aria-hidden="true"></i></a>
                 {{ end}}
                 {{ with .Site.Params.social.github }}
-                <a href="https://github.com/{{.}}"><i class="fa fa-github social" aria-hidden="true"></i></a>
+                <a href="https://github.com/{{.}}" aria-label="Github"><i class="fa fa-github social" aria-hidden="true"></i></a>
                 {{ end }}
                 {{ with .Site.Params.social.instagram }}
-                <a target="_blank" href="https://www.instagram.com/{{.}}"> <i class="fa fa-instagram social"></i></a>
+                <a target="_blank" href="https://www.instagram.com/{{.}}" aria-label="Instagram"> <i class="fa fa-instagram social"></i></a>
                 {{ end }}
                 {{ with .Site.Params.social.buymeacoffee }}
-                <a target="_blank" href="https://www.buymeacoffee.com/{{.}}"> <i class="fa fa-buymeacoffee social"></i></a>
+                <a target="_blank" href="https://www.buymeacoffee.com/{{.}}" aria-label="Buy me a coffee"> <i class="fa fa-buymeacoffee social"></i></a>
                 {{ end }}
             </div>
             <div class="col-lg-4 col-md-4 col-xs-12 text-start text-sm-center logoarea">

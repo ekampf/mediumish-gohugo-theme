@@ -22,7 +22,9 @@
             <div class="col-lg-4 col-md-4 col-xs-12 text-start text-sm-center logoarea">
                 <a class="navbar-brand" href="{{ .Site.BaseURL }}/">
                     {{ with .Site.Params.logo }}
-                    <img src="{{ . | urlize | relURL }}" alt="logo">
+                    {{ $logo := resources.Get . }}
+                    {{ $logo := $logo.Resize (printf "%dx%d webp" $logo.Width $logo.Height) }}
+                    <img src="{{ $logo.RelPermalink }}" alt="logo" height="30px">
                     {{ else }}
                     <span style="font-family:Righteous;">{{.Site.Title}}</span>
                     {{ end }}

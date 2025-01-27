@@ -15,6 +15,7 @@ publishDir = "docs"
 
 [params]
   logo = "/images/logo.png"
+  favicon = "/images/logo.png"
   description ="the clean blog!"
   #mailchimp = "you can provide a mailchimp-link here"
 

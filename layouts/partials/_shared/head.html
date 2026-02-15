@@ -16,6 +16,16 @@
 
 	{{ if .Params.canonicalUrl }}
 	<link rel="canonical" href="{{ .Params.canonicalUrl }}">
+	{{ else if or (eq .Kind "section") (eq .Kind "taxonomy") (eq .Kind "term") }}
+		{{ with .Paginator }}
+		<link rel="canonical" href="{{ .URL | absURL }}">
+		{{ if .HasPrev }}
+		<link rel="prev" href="{{ .Prev.URL | absURL }}">
+		{{ end }}
+		{{ if .HasNext }}
+		<link rel="next" href="{{ .Next.URL | absURL }}">
+		{{ end }}
+		{{ end }}
 	{{ else }}
 	<link rel="canonical" href="{{ .Permalink }}">
 	{{ end }}
@@ -119,7 +129,19 @@
 				},
 				"url"	:	"{{ .Permalink }}",
 				"wordCount"	:	"{{ .WordCount }}",
-				"image"	:	"{{ .Params.image | absURL }}",
+				{{ $imageUrl := "" }}
+				{{ if .Params.image }}
+					{{ $imageUrl = .Params.image | absURL }}
+				{{ else }}
+					{{ $images := .Resources.ByType "image" }}
+					{{ with $images.GetMatch "*cover*" }}
+						{{ $cover := .Resize "1200x webp" }}
+						{{ $imageUrl = $cover.Permalink }}
+					{{ else }}
+						{{ $imageUrl = .Site.Params.logo | absURL }}
+					{{ end }}
+				{{ end }}
+				"image"	:	"{{ $imageUrl }}",
 				"keywords"	:	"{{ range $i, $e := .Params.tags }}{{ if $i }},{{ end }}{{ $e }}{{ end}}"
 			}
 			</script>

@@ -75,6 +75,11 @@
 			{{ if .Description }}
 				{{ $description = printf "%s" .Description }}
 			{{ end }}
+			{{ $socialLinks := slice }}
+			{{ with .Site.Params.social.github }}{{ $socialLinks = $socialLinks | append (printf "https://github.com/%s" .) }}{{ end }}
+			{{ with .Site.Params.social.linkedin }}{{ $socialLinks = $socialLinks | append (printf "https://www.linkedin.com/in/%s" .) }}{{ end }}
+			{{ with .Site.Params.social.twitter }}{{ $socialLinks = $socialLinks | append (printf "https://twitter.com/%s" .) }}{{ end }}
+			{{ $hasSocial := gt (len $socialLinks) 0 }}
 			<script type="application/ld+json">
 			{
 				"@context"	:	"https://schema.org",
@@ -96,22 +101,26 @@
 				"author"		: {
 					"@type"	: "Person",
 					"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-					"url"	: "{{"/about/" | absURL}}"
+					"url"	: "{{"/about/" | absURL}}"{{ if $hasSocial }},
+					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}
 				},
 				"creator"		: {
 					"@type"	: "Person",
 					"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-					"url"	: "{{"/about/" | absURL}}"
+					"url"	: "{{"/about/" | absURL}}"{{ if $hasSocial }},
+					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}
 				},
 				"accountablePerson"	: {
 					"@type"	: "Person",
 					"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-					"url"	: "{{"/about/" | absURL}}"
+					"url"	: "{{"/about/" | absURL}}"{{ if $hasSocial }},
+					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}
 				},
 				"copyrightHolder"	: {
 					"@type"	: "Person",
 					"name"	: "{{ default .Site.Params.author.name .Params.author }}",
-					"url"	: "{{"/about/" | absURL}}"
+					"url"	: "{{"/about/" | absURL}}"{{ if $hasSocial }},
+					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}
 				},
 				"copyrightYear"	: "{{ dateFormat "2006" (default .Date (.PublishDate)) }}",
 				"datePublished"	: "{{ dateFormat "2006-01-02" (default .Date (.PublishDate)) }}",

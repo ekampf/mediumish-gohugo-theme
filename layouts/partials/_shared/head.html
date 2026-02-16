@@ -71,8 +71,9 @@
 	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
 	<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
 
-	<!-- Preload Google Fonts (already has display=swap) -->
-	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	<!-- Async load Google Fonts (already has display=swap) -->
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"></noscript>
 
 	<!-- css -->
 	{{ $medium := resources.Get "/css/medium.css" | resources.Fingerprint }}
@@ -85,7 +86,8 @@
 		{{- end }}
 	{{ end }}
 	{{ $css := $css | resources.Concat "css/style.css" | resources.Minify | resources.Fingerprint }}
-	<link rel="stylesheet" href="{{ $css.RelPermalink | absURL }}" integrity="{{ $css.Data.Integrity }}">
+	<link rel="preload" href="{{ $css.RelPermalink | absURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="{{ $css.Data.Integrity }}">
+	<noscript><link rel="stylesheet" href="{{ $css.RelPermalink | absURL }}" integrity="{{ $css.Data.Integrity }}"></noscript>
 
 	<!-- ld+json -->
 	{{ if .IsHome }}

@@ -12,3 +12,28 @@
   "url": {{site.BaseURL}}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ .Site.Params.logo | absURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "founder": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author.name }}",
+    "url": "{{ "/about/" | absURL }}",
+    "sameAs": [
+      "https://github.com/{{ .Site.Params.social.github }}",
+      "https://www.linkedin.com/in/{{ .Site.Params.social.linkedin }}",
+      "https://twitter.com/{{ .Site.Params.social.twitter }}"
+    ]
+  },
+  "sameAs": [
+    "https://github.com/{{ .Site.Params.social.github }}",
+    "https://www.linkedin.com/in/{{ .Site.Params.social.linkedin }}",
+    "https://twitter.com/{{ .Site.Params.social.twitter }}"
+  ]
+}
+</script>

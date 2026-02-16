@@ -30,8 +30,9 @@
 	<link rel="canonical" href="{{ .Permalink }}">
 	{{ end }}
 
-	<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-	<link rel="preconnect" href="//www.google-analytics.com">
+	<!-- Optimized resource hints: preconnect for performance -->
+	<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+	<link rel="preconnect" href="https://www.google-analytics.com">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	{{ if .IsPage }}
@@ -39,15 +40,38 @@
 		<link rel="dns-prefetch" href="//developerzen.disqus.com">
 		{{ end }}
 		{{ if .Site.Params.Utterances.Repo }}
-		<link rel="dns-prefetch" href="//utteranc.es">
+		<link rel="preconnect" href="https://utteranc.es">
 		{{ end }}
 	{{ end }}
-	
+
+	<!-- LCP optimization: preload cover image for blog posts -->
+	{{ if and .IsPage (eq .Type "blog") }}
+		{{ $images := .Resources.ByType "image" }}
+		{{ $shouldShowCover := .Params.showCover | default true }}
+		{{ if $shouldShowCover }}
+			{{ with $images.GetMatch "*cover*" }}
+				{{ $cover := .Resize "800x webp" }}
+				<link rel="preload" as="image" href="{{ $cover.Permalink }}" fetchpriority="high">
+			{{ end }}
+		{{ end }}
+	{{ end }}
+
 	{{ template "_internal/twitter_cards.html" . }}
 	{{ template "_internal/opengraph.html" . }}
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<!-- Inline critical CSS for fast FCP -->
+	{{ $critical := resources.Get "css/critical.css" | resources.Minify }}
+	<style>{{ $critical.Content | safeCSS }}</style>
+
+	<!-- Async load Bootstrap CSS -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+
+	<!-- Async load Fork Awesome CSS -->
+	<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css" integrity="sha512-aupidr80M36SeyviA/hZ2uEPnvt2dTJfyjm9y6z1MgaV13TgzmDiFdsH3cvSNG27mRIj7gJ2gNeg1HeySJyE3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+
+	<!-- Preload Google Fonts (already has display=swap) -->
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
 	<!-- css -->

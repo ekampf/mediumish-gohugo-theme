@@ -29,7 +29,7 @@
                             <div class="col-xs-12 col-md-9 col-lg-10 text-left text-md-left md-nopad-left">
                                 <span class="link-dark">{{ .Site.Params.author.name }}</span><br/>
                                 <span class="author-description">
-                                    {{ .Site.Params.author.description }}
+                                    {{ .Site.Params.author.description }}<br/>
                                     <i class="fa fa-star"></i>
                                     <time datetime="{{ .PublishDate.Format "2006-01-02T15:04:05Z0700" }}" itemprop="datePublished">Published {{ dateFormat "Jan 2, 2006" .PublishDate }}</time>
                                     {{ if ne (.Lastmod.Format "2006-01-02") (.PublishDate.Format "2006-01-02") }}

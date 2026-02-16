@@ -124,9 +124,20 @@
 				"isFamilyFriendly"	: 	"true",
 				"author"		: {
 					"@type"	: "Person",
+					{{ with .Site.Params.author.id }}"@id"	: "{{ . }}",{{ end }}
 					"name"	: "{{ default .Site.Params.author.name .Params.author }}",
 					"url"	: "{{"/about/" | absURL}}"{{ if $hasSocial }},
-					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}
+					"sameAs": [{{ range $i, $link := $socialLinks }}{{ if $i }},{{ end }}"{{ $link }}"{{ end }}]{{ end }}{{ if .Site.Params.author.thumbnail }},
+					"image": {
+						"@type": "ImageObject",
+						"url": "{{ .Site.Params.author.thumbnail | absURL }}"
+					}{{ end }}{{ with .Site.Params.author.jobTitle }},
+					"jobTitle": "{{ . }}"{{ end }}{{ with .Site.Params.author.worksFor }},
+					"worksFor": {
+						"@type": "Organization",
+						"name": "{{ . }}"
+					}{{ end }}{{ with .Site.Params.author.knowsAbout }},
+					"knowsAbout": [{{ range $i, $topic := . }}{{ if $i }}, {{ end }}"{{ $topic }}"{{ end }}]{{ end }}
 				},
 				"creator"		: {
 					"@type"	: "Person",
@@ -175,9 +186,21 @@
 					{{ end }}
 				{{ end }}
 				"image"	:	"{{ $imageUrl }}",
+				{{ if .Params.tags }}
+				"articleSection": "{{ index .Params.tags 0 }}",
+				{{ end }}
+				{{ with .Site.Params.audience }}
+				"audience": {
+					"@type": "Audience",
+					"audienceType": "{{ . }}"
+				},
+				{{ end }}
 				"keywords"	:	"{{ range $i, $e := .Params.tags }}{{ if $i }},{{ end }}{{ $e }}{{ end}}"
 			}
 			</script>
+			{{ if templates.Exists "partials/_shared/jsonld/breadcrumb.html" }}
+			{{ partial "_shared/jsonld/breadcrumb.html" . }}
+			{{ end }}
 		{{ end }}
 	{{ end }}
 

@@ -58,7 +58,7 @@
                     {{ if $shouldShowCover }}
                     {{with $images.GetMatch "*cover*" }}
                         {{ $cover := .Resize "800x webp" }}
-                        <img class="featured-image img-fluid" src="{{ $cover.Permalink }}" alt="thumbnail for this post" fetchpriority="high">
+                        <img class="featured-image img-fluid" src="{{ $cover.Permalink }}" alt="{{ $.Params.coverAlt | default $.Title }}" fetchpriority="high">
                     {{end}}
                     {{ end }}
                     <!-- End Featured Image -->

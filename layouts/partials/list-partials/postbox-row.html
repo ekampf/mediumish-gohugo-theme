@@ -14,9 +14,9 @@
                     {{with $images.GetMatch "*cover*" }}
                         {{$coverThumb := .Resize "x290 webp" }}
                         {{ if $isFirst }}
-                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image" fetchpriority="high">
+                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="{{ $page.Params.coverAlt | default $page.Title }}" fetchpriority="high">
                         {{ else }}
-                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="A thumbnail image" loading="lazy">
+                        <img class="img-fluid" src="{{ $coverThumb.Permalink }}" alt="{{ $page.Params.coverAlt | default $page.Title }}" loading="lazy">
                         {{ end }}
                     {{end}}
                 </a>
